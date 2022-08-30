@@ -25,19 +25,6 @@ function Navigation() {
             <Nav.Link href="/starthere">Start Here</Nav.Link>
             <Nav.Link href="ourstory">Our Story</Nav.Link>
             <Nav.Link href="testing">Test Functions</Nav.Link>
-            <NavDropdown title="View Saved" id="basic-nav-dropdown">
-              <NavDropdown.Item href="#action/3.1">Figs</NavDropdown.Item>
-              <NavDropdown.Divider />
-              <NavDropdown.Item href="#action/3.2">
-                Yams
-              </NavDropdown.Item>
-              <NavDropdown.Divider />
-              <NavDropdown.Item href="#action/3.3">Pineapple</NavDropdown.Item>
-              {/* <NavDropdown.Divider /> */}
-              {/* <NavDropdown.Item href="#action/3.4">
-                Figs
-              </NavDropdown.Item> */}
-            </NavDropdown>
           </Nav>
         </Navbar.Collapse>
       </Container>

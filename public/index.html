@@ -9,6 +9,7 @@
       name="description"
       content="Web site created using create-react-app"
     />
+    <link src="../app.css" />
     <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
     <!--
       manifest.json provides metadata used when your web app is installed on a
@@ -16,13 +17,7 @@
     -->
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
     <!--
-      Notice the use of %PUBLIC_URL% in the tags above.
-      It will be replaced with the URL of the `public` folder during the build.
-      Only files inside the `public` folder can be referenced from the HTML.
-
-      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
-      work correctly both with client-side routing and a non-root public URL.
-      Learn how to configure a non-root public URL by running `npm run build`.
+      bootstrap
     -->
     <link
   rel="stylesheet"
@@ -31,15 +26,29 @@
   crossorigin="anonymous"
 />
 <!-- Mapbox -->
-
-<script src='https://api.mapbox.com/mapbox-gl-js/v2.10.0/mapbox-gl.js'></script>
-<link href='https://api.mapbox.com/mapbox-gl-js/v2.10.0/mapbox-gl.css' rel='stylesheet' />
+<!-- 
+<link href="https://api.mapbox.com/mapbox-gl-js/v2.10.0/mapbox-gl.css" rel="stylesheet">
+<script src="https://api.mapbox.com/mapbox-gl-js/v2.10.0/mapbox-gl.js"></script>
+<style>
+body { margin: 0; padding: 0; }
+#map { position: absolute; top: 0; bottom: 0; width: 100%; }
+</style> -->
+<!-- Material UI -->
+<link
+  rel="stylesheet"
+  href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
+/>
+<link
+  rel="stylesheet"
+  href="https://fonts.googleapis.com/icon?family=Material+Icons"
+/>
 
     <title>Plant Here</title>
   </head>
   <body>
     
     <noscript>You need to enable JavaScript to run this app.</noscript>
+    <!-- <div id="map" className="map-location"></div> -->
     <div id="root"></div>
     <!--
       This HTML file is a template.
@@ -63,28 +72,29 @@
 
 <script>var Alert = ReactBootstrap.Alert;</script>
 
-<!-- <script>
-  const map = new mapboxgl.Map({
-container: 'map', // container ID
-center: [-122.420679, 37.772537], // starting position [lng, lat]
-zoom: 13, // starting zoom
-style: 'mapbox://styles/mapbox/streets-v11', // style URL or style object
-hash: true, // sync `center`, `zoom`, `pitch`, and `bearing` with URL
-// Use `transformRequest` to modify requests that begin with `http://myHost`.
-transformRequest: (url, resourceType) => {
-if (resourceType === 'Source' && url.startsWith('http://myHost')) {
-return {
-url: url.replace('http', 'https'),
-headers: {'my-custom-header': true},
-credentials: 'include'  // Include cookies for cross-origin requests
-};
-}
-}
-});
-// Create a new marker.
-const marker = new mapboxgl.Marker()
-.setLngLat([30.5, 50.5])
-.addTo(map);
-</script> -->
+<script>
+	// TO MAKE THE MAP APPEAR YOU MUST
+	// ADD YOUR ACCESS TOKEN FROM
+// 	// https://account.mapbox.com
+// 	mapboxgl.accessToken = 'pk.eyJ1IjoibWFwY291bnQiLCJhIjoiY2wxanI2OHZ1MGNsMjNqcWdud2czMmF5byJ9.UU3AZXsZeB4yOGG8AgoimA';
+// const map = new mapboxgl.Map({
+// container: 'map', // container ID
+// // Choose from Mapbox's core styles, or make your own style with Mapbox Studio
+// style: 'mapbox://styles/mapbox/satellite-v9', // style URL
+// center: [20, 1], // starting position [lng, lat]
+// zoom: 2.8, // starting zoom
+// projection: 'winkelTripel' // display the map as a 3D globe
+// });
+ 
+// map.on('style.load', () => {
+// map.setFog({}); // Set the default atmosphere style
+// });
+// Set marker options.
+// const marker = new mapboxgl.Marker({
+//     color: "#FFFFFF",
+//     draggable: true
+// }).setLngLat([30.5, 50.5])
+//     .addTo(map);
+</script>
   </body>
 </html>

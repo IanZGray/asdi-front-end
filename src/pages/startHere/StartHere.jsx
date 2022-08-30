@@ -1,65 +1,87 @@
-// import React from 'react'
+import React, { useState } from 'react';
+
 import Card from 'react-bootstrap/Card';
 import ListGroup from 'react-bootstrap/ListGroup';
 import Accordion from 'react-bootstrap/Accordion';
+import ToggleButton from 'react-bootstrap/ToggleButton'
+import Button from 'react-bootstrap/Button';
+import ButtonGroup from 'react-bootstrap/ButtonGroup';
+
+import { Slider } from '@mui/material';
+import { valueToPercent } from '@mui/base';
+
+
 import mapboxgl from 'mapbox-gl';
 
-import React, { useState } from 'react';
-import Button from 'react-bootstrap/Button';
-import Offcanvas from 'react-bootstrap/Offcanvas';
+
+
 
 import './startHere.css';
 
 function StartHere() {
-    
-    mapboxgl.accessToken = 'pk.eyJ1IjoibWFwY291bnQiLCJhIjoiY2wxanI2OHZ1MGNsMjNqcWdud2czMmF5byJ9.UU3AZXsZeB4yOGG8AgoimA';
-    const url = `https://api.mapbox.com/styles/v1/mapbox/outdoors-v11.html?title=true&zoomwheel=true&access_token=${mapboxgl.accessToken}#2.8/0.00/18.537755/0/0`
 
-    // new Marker(options: Object?, legacyOptions: Options?)
+  const [checked, setChecked] = useState(false);
+  const [radioValue, setRadioValue] = useState('1');
 
-// TO MAKE THE MAP APPEAR YOU MUST
-// ADD YOUR ACCESS TOKEN FROM
-// https://account.mapbox.com
-// const map = new mapboxgl.Map({
-// container: 'map', // container ID
-// style: 'mapbox://styles/mapbox/streets-v11', // style URL
-// center: [-74.5, 40], // starting position [lng, lat]
-// zoom: 9, // starting zoom
-// projection: 'globe' // display the map as a 3D globe
-// });
-// map.on('style.load', () => {
-// map.setFog({}); // Set the default atmosphere style
-// });
+  const radios = [
+    { name: 'Active', value: '1' },
+    { name: 'Radio', value: '2' },
+    { name: 'Radio', value: '3' },
+  ];
+  
+  mapboxgl.accessToken = 'pk.eyJ1IjoibWFwY291bnQiLCJhIjoiY2wxanI2OHZ1MGNsMjNqcWdud2czMmF5byJ9.UU3AZXsZeB4yOGG8AgoimA';
+  const url = `https://api.mapbox.com/styles/v1/mapbox/outdoors-v11.html?title=true&zoomwheel=true&access_token=${mapboxgl.accessToken}#2.8/0.00/18.537755/0/0`
+
 
 const [show, setShow] = useState(false);
 
 const handleClose = () => setShow(false);
 const handleShow = () => setShow(true);
 
-// const map = new mapboxgl.Map({
-//     container: 'map', // container ID
-//     center: [-122.420679, 37.772537], // starting position [lng, lat]
-//     zoom: 13, // starting zoom
-//     style: 'mapbox://styles/mapbox/streets-v11', // style URL or style object
-//     hash: true, // sync `center`, `zoom`, `pitch`, and `bearing` with URL
-//     // Use `transformRequest` to modify requests that begin with `http://myHost`.
-//     transformRequest: (url, resourceType) => {
-//         if (resourceType === 'Source' && url.startsWith('http://myHost')) {
-//             return {
-//                 url: url.replace('http', 'https'),
-//                 headers: {'my-custom-header': true},
-//                 credentials: 'include'  // Include cookies for cross-origin requests
-//             };
-//         }
-//     }
-// });
-// // Create a new marker.
-// const marker = new mapboxgl.Marker()
-//     .setLngLat([30.5, 50.5])
-//     .addTo(map);
+
+
   return (
     <>
-    <Button variant="secondary" onClick={handleShow} className="btn2">
+
+    <Card style={{ width: '18rem' }} className='popup fixed-bottom'>
+      <Card.Body>
+        <h2>Filters</h2>
+        <Card.Text>
+        Select optional filters below for a more refined crop list. 
+        </Card.Text>
+      </Card.Body>
+
+      <h3>Timeframe</h3>
+<h4>slidebar here</h4>
+
+      <h3>Specify Macronutrients</h3>
+
+      <ButtonGroup>
+        {radios.map((radio, idx) => (
+          <ToggleButton
+            key={idx}
+            id={`radio-${idx}`}
+            type="radio"
+            variant='outline-warning'
+            name="radio"
+            value={radio.value}
+            checked={radioValue === radio.value}
+            onChange={(e) => setRadioValue(e.currentTarget.value)}
+          >
+            {radio.name}
+          </ToggleButton>
+        ))}
+      </ButtonGroup>
+
+
+
+      {/* <Card.Body>
+        <Button variant="danger">Find Crops</Button>
+      </Card.Body> */}
+    </Card>
+
+
+    {/* <Button variant="secondary" onClick={handleShow} className="btn2">
         Settings
     </Button>
 
@@ -107,7 +129,7 @@ const handleShow = () => setShow(true);
                     </Accordion.Item>
                 </Accordion>
             </Card.Body>
-        </div>
+        </div> */}
         <iframe className='maps'
         src={url} />
     </>

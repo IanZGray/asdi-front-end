@@ -16,7 +16,7 @@ function CarouselImages() {
         />
         <Carousel.Caption>
           <h1 id="caro-title">Emerging Technology can Make a Lasting Impact on Global Agriculture</h1>
-          <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+          <p>What can machine learning do for the future of agriculture?</p>
         </Carousel.Caption>
       </Carousel.Item>
       <Carousel.Item>
@@ -28,7 +28,7 @@ function CarouselImages() {
 
         <Carousel.Caption>
           <h1 id="caro-title">Environmental Sustainability is Key</h1>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          <p>What would a reduction in agricultural waste contribute towards sustainability?</p>
         </Carousel.Caption>
       </Carousel.Item>
       <Carousel.Item>
@@ -40,7 +40,7 @@ function CarouselImages() {
 
         <Carousel.Caption>
           <h1 id="caro-title">Fertile Land is Ripe for the Picking</h1>
-          <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+          <p>Organizing crop placement can maximize yield. </p>
         </Carousel.Caption>
       </Carousel.Item>
     </Carousel>

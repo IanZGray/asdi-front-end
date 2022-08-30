@@ -11,9 +11,9 @@ function OurStory() {
 
   return (
     <>
-    <Container>
+      <Container id="cont">
         <h1>We'll put case study here</h1>
-    </Container>
+      </Container>
     
     </>
 

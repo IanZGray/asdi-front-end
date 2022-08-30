@@ -1,6 +1,5 @@
 import React from 'react'
 import Button from 'react-bootstrap/esm/Button'
-import { useEffect } from 'react'
 
 import './testing.css'
 import soilData from '../../soilData'
@@ -8,25 +7,20 @@ import cropData from '../../cropData'
 import { useMarkerContext } from '../../context/context'
 
 function Testing() {
-    const { markers, setMarkers, filteredGPS } = useMarkerContext();
-
+    const { markers, setMarkers } = useMarkerContext();
+    let crops = cropData;
     let items = markers;
-    // const soilData = getSoilData();
-    // const cropData = getCropData();
-    const handleSubmit = (e) => {
+
+    const handleSubmitz = (e) => {
         e.preventDefault();
-        cropTest(soilData, cropData[0]);
-    }
-    const handleSubmits = (e) => {
-        e.preventDefault();
-        cropTest(soilData, cropData[1]);
+        // console.log(e.target.id)
+        cropTest(soilData, cropData[e.target.id]);
     }
 
-
-    // unique ids
-    let i = 0
+    // unique ids gps
+    let i = 0;
     let iAdder = () => {
-        i++
+        i++;
         return i
     }
     let uniqueList = () => {
@@ -46,7 +40,13 @@ function Testing() {
         iAdder();
         return unique
     }
-    // unique ids
+    // unique ids crop buttons
+    let j = 0;
+    let cropID = () => {
+        let unique = j;
+        j++;
+        return unique
+    }
 
     let tempArray = [];
 
@@ -69,13 +69,10 @@ function Testing() {
 
   return (
     <>
-    {/* <div>OurStory</div>
-    <div className="circle"></div> */}
     <div className="wide">
-        <h1> Filter Test </h1>
-        <Button variant="warning" onClick={handleSubmits}>Click Here to filter for Apples</Button>
-        <Button variant="warning" onClick={handleSubmit}>Click Here to filter for Cabage</Button>
-
+    {crops.map((crop) => 
+    <Button variant="warning" id={cropID()} onClick={handleSubmitz}>Click Here to filter for {crop.name}</Button>
+    )}
 
     {items.map((data) => (
         <ul id={uniqueList()} className="bac">

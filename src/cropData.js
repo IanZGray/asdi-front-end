@@ -9,9 +9,9 @@ let cropData = [
     {
         name: "apple",
         soilMin: 0,
-        soilMax: 1800.2,
+        soilMax: 152,
         waterMin: 0,
-        waterMax: 1000,
+        waterMax: 150,
     },
     {
         name: "grape",
@@ -23,7 +23,7 @@ let cropData = [
     {
         name: "cabbage",
         soilMin: 3,
-        soilMax: 100,
+        soilMax: 50,
         waterMin: 4,
         waterMax: 200,
     },
@@ -32,7 +32,7 @@ let cropData = [
         soilMin: 9,
         soilMax: 100,
         waterMin: 10,
-        waterMax: 500,
+        waterMax: 50,
     }
   ];
   
