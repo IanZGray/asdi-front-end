@@ -1,11 +1,11 @@
 h1 {
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    color: rgb(219, 255, 219);
+    color: rgb(17, 17, 17);
     text-align: center;
     padding-top: 5vh;
 }
 .contain-area {
     height: 100vh;
     width: 100vw;
-    background-color: rgb(182, 146, 81);
+    background-color: rgb(242, 242, 242);
 }

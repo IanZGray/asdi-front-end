@@ -1,14 +1,14 @@
-import Container from 'react-bootstrap/Container';
-// import Card from 'react-bootstrap/Card';
 import Navbar from 'react-bootstrap/Navbar';
+
+import './footer.css'
 
 function Foots() {
     return (
-      <Navbar bg="success" variant="dark" className='fixed-bottom'>
-        <Container>
-          <Navbar.Brand>Footer Down Here</Navbar.Brand>
-        </Container>
-      </Navbar>
+      <div bg="light" variant="light" className='fixed-bottom'>
+
+        <p >Thank you for viewing!</p>
+
+      </div>
   );
 }
 
